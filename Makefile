@@ -1,9 +1,9 @@
-TYPE ?= macos
+TYPE?=macos
 
 all: before mitamae after
 
 before:
-	wget https://github.com/k0kubun/mitamae/releases/download/v1.0.0/mitamae-x86_64-linux -O ${PWD}/bin/mitamae
+	sh ${PWD}/bin/clone_mitamae.sh
 
 mitamae:
 	${PWD}/bin/mitamae local -y nodes/$(TYPE).yml bootstrap.rb
